@@ -26,9 +26,7 @@ const LoginForm = ({ login }: LoginFormProps) => {
       e.preventDefault();
 
       gitHubLogin(name, password)
-        .then((token: string) => {
-          login(token);
-        })
+        .then(login)
         .catch(alert);
     },
     [name, password, login]

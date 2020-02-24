@@ -3,6 +3,7 @@ import { useLazyQuery } from "@apollo/react-hooks";
 import { GET_REPOSITORIES } from "../api/apollo";
 import ControlsButtons from "./ControlsButtons";
 import Results from "./Results";
+import DualBalls from "../assets/Dualballs.svg";
 
 import * as S from "./styledComponents";
 
@@ -51,13 +52,15 @@ const GitHubSearch = () => {
   return (
     <S.GitHubSearchWrapper>
       <S.Wrapper>
-        <S.Input onChange={handleChangeSearchField} value={searchField} />
+        <S.LargeInput
+          placeholder="Start typing to search the GitHub's repositories"
+          onChange={handleChangeSearchField}
+          value={searchField}
+        />
       </S.Wrapper>
       <S.Wrapper column pv={10}>
-        {!searchField ? (
-          "Start typing to search the GitHub's repositories"
-        ) : loading || !data ? (
-          "Loading..."
+        {!searchField ? null : loading || !data ? (
+          <img src={DualBalls} alt="loading" />
         ) : !data.search.repositoryCount ? (
           "No repositories"
         ) : (

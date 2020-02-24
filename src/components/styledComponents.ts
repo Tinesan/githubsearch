@@ -4,6 +4,33 @@ const Input = styled.input`
   padding: 5px;
 `;
 
+const LargeInput = styled(Input)`
+  display: flex;
+  flex-grow: 1;
+  padding: 10px 20px;
+  font-size: 36px;
+  border-radius: 10px;
+  outline: none;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+
+  &:focus {
+    border: 1px solid gray;
+  }
+
+  &::placeholder {
+    font-size: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+`;
+
 const FormWrapper = styled.div`
   display: flex;
   align-self: center;
@@ -19,10 +46,12 @@ const FormWrapper = styled.div`
 
 const GitHubSearchWrapper = styled.div`
   display: flex;
-  flex-grow: 1;
-  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
   flex-direction: column;
   padding: 50px;
+  flex-grow: 1;
+
   @media (max-width: 480px) {
     padding: 15px;
   }
@@ -113,6 +142,10 @@ const GithubInfoWrapper = styled(Wrapper)`
   }
 `;
 
+const ResultsWrapper = styled(Wrapper)`
+  max-width: 700px;
+`;
+
 const Link = styled.a`
   display: flex;
   color: currentcolor;
@@ -136,5 +169,7 @@ export {
   SvgWrapper,
   Link,
   ControlsWrapper,
-  GithubInfoWrapper
+  GithubInfoWrapper,
+  ResultsWrapper,
+  LargeInput
 };

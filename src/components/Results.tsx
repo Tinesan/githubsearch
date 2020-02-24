@@ -9,11 +9,11 @@ type ResultsProps = {
 
 const Results = ({ data }: ResultsProps) => {
   return (
-    <S.Wrapper column mv={10}>
+    <S.ResultsWrapper column mv={10}>
       {data.map((i: RepositoryProps) => (
         <Repository key={i.id} {...i} />
       ))}
-    </S.Wrapper>
+    </S.ResultsWrapper>
   );
 };
 
