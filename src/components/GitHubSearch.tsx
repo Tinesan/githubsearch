@@ -7,7 +7,7 @@ import DualBalls from "../assets/Dualballs.svg";
 
 import * as S from "./styledComponents";
 
-const GitHubSearch = () => {
+const GitHubSearch: React.FC = () => {
   const [searchField, setSearchField] = useState<string>("");
   const [loadRepositories, { loading, data }] = useLazyQuery(GET_REPOSITORIES, {
     fetchPolicy: "network-only"

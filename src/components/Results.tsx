@@ -7,7 +7,7 @@ type ResultsProps = {
   data: RepositoryProps[];
 };
 
-const Results = ({ data }: ResultsProps) => {
+const Results: React.FC<ResultsProps> = ({ data }) => {
   return (
     <S.ResultsWrapper column mv={10}>
       {data.map((i: RepositoryProps) => (
@@ -30,13 +30,13 @@ type RepositoryProps = {
   url: string;
 };
 
-export const Repository = ({
+export const Repository: React.FC<RepositoryProps> = ({
   nameWithOwner,
   description,
   stargazers,
   forks,
   url
-}: RepositoryProps) => {
+}) => {
   return (
     <S.RepositoryWrapper column pv={20} ph={30} mv={5}>
       <S.Wrapper pv={5}>

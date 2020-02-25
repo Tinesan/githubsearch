@@ -1,6 +1,6 @@
 import ApolloClient, { gql } from "apollo-boost";
 
-const configureAppoloClient = (token: string) =>
+const configureAppoloClient = (token: string): ApolloClient<{}> =>
   new ApolloClient({
     uri: "https://api.github.com/graphql",
     request: operation => {

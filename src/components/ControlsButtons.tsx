@@ -9,12 +9,12 @@ type ControlButtonsProps = {
   nextButtonDisabled: boolean;
 };
 
-const ControlsButtons = ({
+const ControlsButtons: React.FC<ControlButtonsProps> = ({
   previoustButtonClick,
   nextButtonClick,
   previousButtonDisabled,
   nextButtonDisabled
-}: ControlButtonsProps) => {
+}) => {
   return (
     <S.ControlsWrapper mv={10}>
       <S.Wrapper>

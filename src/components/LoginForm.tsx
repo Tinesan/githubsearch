@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { GoMarkGithub } from "react-icons/go";
 import { gitHubLogin } from "../api/login";
 
@@ -8,7 +8,7 @@ type LoginFormProps = {
   login: (token: string) => void;
 };
 
-const LoginForm = ({ login }: LoginFormProps) => {
+const LoginForm: React.FC<LoginFormProps> = ({ login }) => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
